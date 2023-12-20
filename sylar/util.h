@@ -6,8 +6,12 @@
 #define SYLAR_UTIL_H
 
 #include <fstream>
+#include <stdint.h>
 
 namespace sylar {
+    pid_t GetThreadId();
+
+    uint32_t GetFiberId();
 
     class FSUtil {
 

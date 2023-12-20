@@ -477,6 +477,11 @@ namespace sylar {
         return ss.str();
     }
 
+    FileLogAppender::FileLogAppender(std::string filename)
+            : m_filename(std::move(filename)) {
+        reopen();
+    }
+
     void FileLogAppender::log(Logger::ptr logger, LogLevel level, LogEvent::ptr event) {
         if (level >= m_level) {
             uint64_t now = event->getTime();

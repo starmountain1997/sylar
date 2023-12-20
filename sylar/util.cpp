@@ -3,11 +3,21 @@
 //
 
 #include <sys/stat.h>
+#include <sys/syscall.h>
 #include "util.h"
 #include <string.h>
 #include <unistd.h>
 
 namespace sylar {
+    pid_t GetThreadId() {
+        return syscall(SYS_gettid);
+    }
+
+    uint32_t GetFiberId() {
+//        return sylar::Fiber::GetFiberId();
+        return 0;//FIXME:
+    }
+
     static int __lstat(const char *file, struct stat *st = nullptr) {
         struct stat lst;
         int ret = lstat(file, &lst);
