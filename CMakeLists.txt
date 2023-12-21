@@ -18,11 +18,14 @@ add_executable(sylar
         sylar/singleton.h
         sylar/util.cpp
         sylar/util.h
-        tests/test.cpp
         sylar/fiber.cpp
         sylar/fiber.h
         sylar/config.cpp
-        sylar/config.h)
+        sylar/config.h
+        sylar/env.cpp
+        sylar/env.h
+        tests/test.cpp
+)
 
 target_link_libraries(
         sylar
