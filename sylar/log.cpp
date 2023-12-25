@@ -108,7 +108,7 @@ namespace sylar {
 
     class MessageFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit MessageFormatItem(const std::string &str = "") {}
+        MessageFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getContent();
@@ -117,7 +117,7 @@ namespace sylar {
 
     class LevelFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit LevelFormatItem(const std::string &str = "") {}
+        LevelFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << loglevel_to_string(level);
@@ -126,7 +126,7 @@ namespace sylar {
 
     class ElapseFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit ElapseFormatItem(const std::string &str = "") {}
+        ElapseFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getElapse();
@@ -135,7 +135,7 @@ namespace sylar {
 
     class NameFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit NameFormatItem(const std::string &str = "") {}
+        NameFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getLogger()->getName();
@@ -144,7 +144,7 @@ namespace sylar {
 
     class ThreadIdFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit ThreadIdFormatItem(const std::string &str = "") {}
+        ThreadIdFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getThreadId();
@@ -153,7 +153,7 @@ namespace sylar {
 
     class FiberIdFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit FiberIdFormatItem(const std::string &str = "") {}
+        FiberIdFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getFiberId();
@@ -162,7 +162,7 @@ namespace sylar {
 
     class ThreadNameFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit ThreadNameFormatItem(const std::string &str = "") {}
+        ThreadNameFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getThreadName();
@@ -171,7 +171,7 @@ namespace sylar {
 
     class DateTimeFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit DateTimeFormatItem(const std::string &format = "%Y-%m-%d %H:%M:%S")
+        DateTimeFormatItem(const std::string &format = "%Y-%m-%d %H:%M:%S")
                 : m_format(format) {
             if (m_format.empty()) {
                 m_format = "%Y-%m-%d %H:%M:%S";
@@ -193,7 +193,7 @@ namespace sylar {
 
     class FilenameFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit FilenameFormatItem(const std::string &str = "") {}
+        FilenameFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getFile();
@@ -202,7 +202,7 @@ namespace sylar {
 
     class LineFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit LineFormatItem(const std::string &str = "") {}
+        LineFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << event->getLine();
@@ -211,7 +211,7 @@ namespace sylar {
 
     class NewLineFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit NewLineFormatItem(const std::string &str = "") {}
+        NewLineFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << std::endl;
@@ -221,7 +221,7 @@ namespace sylar {
 
     class StringFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit StringFormatItem(const std::string &str)
+        StringFormatItem(const std::string &str)
                 : m_string(str) {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
@@ -234,7 +234,7 @@ namespace sylar {
 
     class TabFormatItem : public LogFormatter::FormatItem {
     public:
-        explicit TabFormatItem(const std::string &str = "") {}
+        TabFormatItem(const std::string &str = "") {}
 
         void format(std::ostream &os, Logger::ptr logger, LogLevel level, LogEvent::ptr event) override {
             os << "\t";

@@ -41,7 +41,7 @@ namespace sylar {
     template<class T>
     struct ReadScopedLockImpl {
     public:
-        explicit ReadScopedLockImpl(T &mutex) : m_mutex(mutex) {
+        ReadScopedLockImpl(T &mutex) : m_mutex(mutex) {
             m_mutex.rdlock();
             m_locked = true;
         }
@@ -70,7 +70,7 @@ namespace sylar {
     template<class T>
     struct WriteScopedLockImpl {
     public:
-        explicit WriteScopedLockImpl(T &mutex) : m_mutex(mutex) {
+        WriteScopedLockImpl(T &mutex) : m_mutex(mutex) {
             m_mutex.wrlock();
             m_locked = true;
         }

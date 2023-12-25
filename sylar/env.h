@@ -6,7 +6,10 @@
 #define SYLAR_ENV_H
 
 #include "mutex.h"
+#include "singleton.h"
 #include <string>
+#include <map>
+#include <vector>
 
 namespace sylar {
 
@@ -24,9 +27,12 @@ namespace sylar {
 
     private:
 
-
+        RWMutexType m_mutex;
+        std::map<std::string, std::string> m_args;
+        std::vector<std::pair<std::string, std::string> > m_helps;
     };
 
+    typedef sylar::Singleton<Env> ENvMgr;
 } // sylar
 
 #endif //SYLAR_ENV_H
