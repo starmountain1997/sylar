@@ -33,6 +33,8 @@ add_executable(sylar
         sylar/env.h
         tests/test.cpp
         tests/test_config.cpp
+        sylar/thread.cpp
+        sylar/thread.h
 )
 
 target_link_libraries(

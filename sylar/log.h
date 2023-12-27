@@ -107,12 +107,9 @@ namespace sylar {
 
         uint32_t getElapse() const { return m_elapse; }
 
-
         uint32_t getThreadId() const { return m_threadId; }
 
-
         uint32_t getFiberId() const { return m_fiberId; }
-
 
         uint64_t getTime() const { return m_time; }
 
